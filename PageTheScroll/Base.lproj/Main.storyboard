@@ -40,10 +40,10 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4h-E9-Bwc">
-                                <rect key="frame" x="58" y="0.0" width="260" height="667"/>
+                                <rect key="frame" x="77.5" y="0.0" width="220" height="667"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="muB-KQ-0t3"/>
+                                    <constraint firstAttribute="width" constant="220" id="muB-KQ-0t3"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
