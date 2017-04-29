@@ -65,11 +65,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left!")
-                if currentPage < MAX_PAGE { moveScrollView(direction: 1) }
-                
+                if currentPage == MIN_PAGE || currentPage < MAX_PAGE { moveScrollView(direction: 1) }
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right!")
-                if currentPage > MIN_PAGE { moveScrollView(direction: -1) }
+                if currentPage == MAX_PAGE || currentPage > MIN_PAGE { moveScrollView(direction: -1) }
             default: break
             }
         }
