@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate {
 
     var images = [UIImageView]()
     @IBOutlet weak var scrollView: UIScrollView!
@@ -23,12 +23,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeLeft.direction = .left
-        swipeLeft.delegate = self
         view.addGestureRecognizer(swipeLeft)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = .right
-        swipeRight.delegate = self
         view.addGestureRecognizer(swipeRight)
 
     }
@@ -52,11 +50,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             scrollView.addSubview(imageView)
             
             imageView.frame = CGRect(x: newX - 75, y: (scrollHeight / 2) - 75, width: 150, height: 150)
-            
         }
         
         scrollView.clipsToBounds = false
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height)
+        scrollView.delegate = self
+        
     }
     
     func respondToSwipeGesture(_ sender: UIGestureRecognizer) {
