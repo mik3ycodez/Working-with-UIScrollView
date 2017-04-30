@@ -19,7 +19,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeLeft.direction = .left
@@ -55,7 +54,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.clipsToBounds = false
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.size.height)
         scrollView.delegate = self
-        
     }
     
     func respondToSwipeGesture(_ sender: UIGestureRecognizer) {
@@ -81,7 +79,3 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
 }
-
-
-
-
